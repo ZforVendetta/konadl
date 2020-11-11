@@ -100,7 +100,8 @@ class Konadl:
         self.total_downloads = 0
         self.pages = False
         self.crawl_all = False
-        self.yandere = False  # Use Yande.re website
+        self.yandere = True  # Use Yande.re website
+        self.lolibooru = True  # Use Yande.re website
         self.safe = True
         self.explicit = False
         self.questionable = False
@@ -159,6 +160,8 @@ class Konadl:
         self.site_root = 'https://konachan.com'
         if self.yandere:
             self.site_root = 'https://yande.re'
+        if self.lolibooru:
+            self.site_root = 'https://lolibooru.moe/'
 
     def crawl(self):
         """ Generic crawling
@@ -421,7 +424,9 @@ class Konadl:
 
                 # Start retrieving image
                 self.print_retrieval(url, page)
-                file_name = url.split("/")[-1].replace('%20', '_').replace('_-_', '_')
+                file_name_url = url.split("/")[-1]
+                #change rename role
+                file_name = re.sub('%\d\d','_',file_name_url).replace('_-_','_')
                 subfolder = ''
 
                 # Store into subdirectories if requested
@@ -714,10 +719,11 @@ if __name__ == '__main__':
 
     # Set this to True If you want to crawl yande.re
     kona.yandere = False
+    kona.lolibooru = False
 
     # Download images by ratings
-    kona.safe = False            # Include safe rated images
-    kona.questionable = False   # Include questionable rated images
+    kona.safe = True            # Include safe rated images
+    kona.questionable = True   # Include questionable rated images
     kona.explicit = True       # Include explicit rated images
 
     # Set crawler and downloader threads
