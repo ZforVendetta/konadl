@@ -9,6 +9,10 @@ KonaDL CLI Version: **1.3.9**
 
 ## **[Usages | 使用教程](https://github.com/K4YT3X/konadl/wiki)**
 
+## 2020/11/11 add lolibooru.moe  -l  --lolibooru  |  添加了lolibooru.moe  -l  --lolibooru  |  「lolibooru.moe」を追加した  -l  --lolibooru
+
+## 2020/11/11 fix file rename role (avoid '%21' etc...)  |  修复了重命名规则(防止'%21'等...)  |  名前を変更するルールを修正した('%21'などの避けるため...)
+
 Please refer to the [wiki page](https://github.com/K4YT3X/konadl/wiki) for usages and instructions.
 
 ## Important Features
