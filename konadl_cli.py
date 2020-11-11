@@ -32,6 +32,7 @@ def process_arguments():
     control_group.add_argument('-a', '--all', help='Download all images', action='store_true', default=False)
     control_group.add_argument('-p', '--page', help='Crawl a specific page', type=int, action='store', default=False)
     control_group.add_argument('-y', '--yandere', help='Crawl Yande.re site', action='store_true', default=False)
+    control_group.add_argument('-l', '--lolibooru', help='Crawl lolibooru.moe site', action='store_true', default=False)
     control_group.add_argument('-o', '--storage', help='Storage directory', action='store', default=False)
     control_group.add_argument('--separate', help='Separate images into folders by ratings', action='store_true', default=False)
     control_group.add_argument('-u', '--update', help='Update new images', action='store_true', default=False)
@@ -109,6 +110,8 @@ def display_options(kona, load_progress, args):
             Avalon.warning('Including {}EXPLICIT{} rated images'.format(Avalon.FG.R, Avalon.FG.Y))
         if kona.yandere:
             Avalon.info('Crawling yande.re')
+        if kona.lolibooru:
+            Avalon.info('Crawling lolibooru.moe')
 
         if args.pages:
             if args.pages == 1:
@@ -208,6 +211,7 @@ try:
         # Pass terminal arguments to libkonadl object
         kona.separate = args.separate
         kona.yandere = args.yandere
+        kona.lolibooru = args.lolibooru
         kona.safe = args.safe
         kona.questionable = args.questionable
         kona.explicit = args.explicit
