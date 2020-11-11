@@ -13,6 +13,8 @@ KonaDL CLI Version: **1.3.9**
 
 ## 2020/11/11 fix file rename role (avoid '%21' etc...)  |  修复了重命名规则(防止'%21'等...)  |  名前を変更するルールを修正した('%21'などの避けるため...)
 
+## 2020/11/11 create 'errors_redownload.py' to retry the failed tasks recorded in 'errors.log' |  新建了'errors_redownload.py'来重试'errors.log'中记录的失败的任务  |  'errors_redownload.py'が新規された、'errors.log'の中の失敗記録によって再実行ができる
+
 Please refer to the [wiki page](https://github.com/K4YT3X/konadl/wiki) for usages and instructions.
 
 ## Important Features
